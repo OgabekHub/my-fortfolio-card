@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.card {
+    width: 320px;
+    height: 450px;
+    perspective: 1200px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.02); 
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Yumshoq flip effekti */
+    transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-front {
+    background: linear-gradient(45deg, #ff6b6b, #ffa502);
+    border: 3px solid #fff;
+}
+
+.card-back {
+    background: #fff;
+    transform: rotateY(180deg);
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+}
+
+.aylana {
+    width: 140px;
+    height: 140px;
+    background: url('pexels-photo-771742.webp') no-repeat center/cover; 
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.card-front .aylana {
+    transform: scale(1.1);
+}
+
+.aylana.smaller {
+    width: 110px;
+    height: 110px;
+    background: url('pexels-photo-771742.webp') no-repeat center/cover;
+    border-radius: 50%;
+    border: 4px solid #fff; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, border 0.3s ease; 
+}
+.card-back:hover .aylana.smaller {
+    transform: translateY(-10px);
+    border: 4px solid #ff6b6b; 
+}
+
+.header-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+h4 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #2a5298;
+    letter-spacing: 1px;
+}
+
+p {
+    font-size: 18px;
+    color: #666;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.btn a {
+    background: #2a5298;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.btn a:hover {
+    background: #1e3c72;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button {
+    display: inline-block;
+    background: #ff6b6b;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background: #ffa502;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
