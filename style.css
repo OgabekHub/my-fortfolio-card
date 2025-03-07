@@ -42,7 +42,7 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Yumshoq flip effekti */
+    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55); 
     transform-style: preserve-3d;
 }
 
@@ -92,7 +92,7 @@ body {
 .aylana.smaller {
     width: 110px;
     height: 110px;
-    background: url('pexels-photo-771742.webp') no-repeat center/cover;
+    background: url('my-profile-image.jpg') no-repeat center/cover;
     border-radius: 50%;
     border: 4px solid #fff; 
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
