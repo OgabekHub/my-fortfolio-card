@@ -9,7 +9,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    background: linear-gradient(135deg, #1e1e2f 0%, #2a2a72 100%); /* Zamonaviy quyuq fon */
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -28,21 +28,22 @@ body {
     width: 320px;
     height: 450px;
     perspective: 1200px;
-    border-radius: 15px;
+    border-radius: 20px; /* Yumshoqroq burchaklar */
     overflow: hidden;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); /* Chuqurroq soya */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .card:hover {
-    transform: scale(1.02); 
+    transform: scale(1.05); /* Kattalashish effekti */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
 }
 
 .card-inner {
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55); 
+    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     transform-style: preserve-3d;
 }
 
@@ -56,37 +57,43 @@ body {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    border-radius: 15px;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .card-front {
-    background: linear-gradient(45deg, #ff6b6b, #ffa502);
-    border: 3px solid #fff;
+    background: linear-gradient(45deg, #6b48ff, #00ddeb); /* Zamonaviy ko‘k-siyohrang gradient */
+    border: 3px solid #ffffff20; /* Yarim shaffof chegara */
 }
 
 .card-back {
-    background: #fff;
+    background: linear-gradient(45deg, #1e1e2f, #2a2a72); /* Quy-dark gradient */
     transform: rotateY(180deg);
     flex-direction: column;
-    padding: 20px;
+    padding: 25px;
     text-align: center;
+    border: 3px solid #ffffff20; /* Old qismga mos chegara */
 }
 
 .aylana {
     width: 140px;
     height: 140px;
-    background: url('pexels-photo-771742.webp') no-repeat center/cover; 
+    background: url('pexels-photo-771742.webp') no-repeat center/cover;
     border-radius: 50%;
-    border: 4px solid #fff;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    border: 4px solid #00ddeb; /* Gradientdan olingan rang */
+    box-shadow: 0 5px 20px rgba(0, 221, 235, 0.4); /* Yorqin soya */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .card-front .aylana {
     transform: scale(1.1);
+}
+
+.card-front:hover .aylana {
+    transform: scale(1.15);
+    box-shadow: 0 10px 30px rgba(0, 221, 235, 0.6);
 }
 
 .aylana.smaller {
@@ -94,69 +101,73 @@ body {
     height: 110px;
     background: url('my-profile-image.jpg') no-repeat center/cover;
     border-radius: 50%;
-    border: 4px solid #fff; 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, border 0.3s ease; 
+    border: 4px solid #6b48ff; /* Gradientdan olingan rang */
+    box-shadow: 0 5px 20px rgba(107, 72, 255, 0.4);
+    transition: transform 0.4s ease, border 0.4s ease;
 }
+
 .card-back:hover .aylana.smaller {
-    transform: translateY(-10px);
-    border: 4px solid #ff6b6b; 
+    transform: translateY(-15px);
+    border: 4px solid #00ddeb; /* Hoverda rang o‘zgarishi */
+    box-shadow: 0 10px 30px rgba(0, 221, 235, 0.6);
 }
 
 .header-group {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 h4 {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 600;
-    color: #2a5298;
-    letter-spacing: 1px;
+    color: #fff; /* Oq rang zamonaviy ko‘rinish uchun */
+    letter-spacing: 1.2px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Engil soya */
 }
 
 p {
     font-size: 18px;
-    color: #666;
+    color: #d1d1e9; /* Och kulrang-oq */
     font-weight: 300;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .btn {
     display: flex;
-    gap: 10px;
-    margin: 15px 0;
+    gap: 12px;
+    margin: 20px 0;
 }
 
 .btn a {
-    background: #2a5298;
+    background: #6b48ff; /* Gradientdan olingan rang */
     color: #fff;
-    padding: 8px 18px;
-    border-radius: 25px;
+    padding: 10px 20px;
+    border-radius: 30px;
     font-size: 14px;
-    transition: all 0.3s ease;
+    font-weight: 400;
+    transition: all 0.4s ease;
 }
 
 .btn a:hover {
-    background: #1e3c72;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    background: #00ddeb; /* Gradientdan olingan ikkinchi rang */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 221, 235, 0.5);
 }
 
 .button {
     display: inline-block;
-    background: #ff6b6b;
+    background: #ff2e63; /* Yorqin pushti-qizil rang */
     color: #fff;
-    padding: 10px 25px;
-    border-radius: 25px;
+    padding: 12px 30px;
+    border-radius: 30px;
     font-weight: 400;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
 }
 
 .button:hover {
-    background: #ffa502;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    background: #ff577f; /* Hoverda ochroq pushti */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 46, 99, 0.5);
 }
