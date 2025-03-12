@@ -1,4 +1,3 @@
-/* Fontni Righteous bilan almashtirish */
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 * {
@@ -9,7 +8,7 @@
 }
 
 body {
-    font-family: 'Righteous', sans-serif; /* Retro-futuristik font */
+    font-family: 'Righteous', sans-serif; 
     background: linear-gradient(135deg, #1e1e2f 0%, #2a2a72 100%);
     min-height: 100vh;
     display: flex;
@@ -121,19 +120,19 @@ body {
 }
 
 h4 {
-    font-size: 32px; /* Kattaroq va ta’sirli */
-    font-weight: 400; /* Righteous’da bitta og‘irlik bor, shuning uchun standart */
+    font-size: 32px; 
+    font-weight: 400; 
     color: #fff;
-    letter-spacing: 2px; /* Kengroq masofa retro uslub uchun */
-    text-shadow: 0 3px 8px rgba(0, 221, 235, 0.5); /* Yorqin soya */
+    letter-spacing: 2px;
+    text-shadow: 0 3px 8px rgba(0, 221, 235, 0.5); 
 }
 
 p {
-    font-size: 18px; /* Biroz kattaroq */
+    font-size: 18px; 
     color: #d1d1e9;
-    font-weight: 400; /* Standart og‘irlik */
-    letter-spacing: 1.2px; /* Retro-futuristik masofa */
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); /* Engil soya */
+    font-weight: 400; 
+    letter-spacing: 1.2px; 
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); 
 }
 
 .btn {
@@ -147,9 +146,9 @@ p {
     color: #fff;
     padding: 10px 20px;
     border-radius: 30px;
-    font-size: 15px; /* Biroz kattaroq */
-    font-weight: 400; /* Standart og‘irlik */
-    letter-spacing: 1.5px; /* Keng masofa */
+    font-size: 15px;
+    font-weight: 400; 
+    letter-spacing: 1.5px; 
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     transition: all 0.4s ease;
 }
@@ -166,9 +165,9 @@ p {
     color: #fff;
     padding: 12px 30px;
     border-radius: 30px;
-    font-weight: 400; /* Standart og‘irlik */
-    letter-spacing: 1.5px; /* Keng masofa */
-    font-size: 16px; /* Biroz kattaroq */
+    font-weight: 400; 
+    letter-spacing: 1.5px; 
+    font-size: 16px; 
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     transition: all 0.4s ease;
 }
