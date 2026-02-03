@@ -13,6 +13,7 @@ body {
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,12 +81,15 @@ body::after {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: clamp(16px, 4vw, 32px);
 }
 
 .card {
-    width: 320px;
-    height: 450px;
+    width: min(360px, 92vw);
+    height: clamp(360px, 70vh, 480px);
+    max-height: 90svh;
     perspective: 1200px;
     border-radius: 20px;
     overflow: hidden;
@@ -131,15 +135,16 @@ body::after {
     background: linear-gradient(45deg, #1e1e2f, #2a2a72);
     transform: rotateY(180deg);
     flex-direction: column;
-    padding: 25px;
+    padding: 24px;
     text-align: center;
     border: 3px solid #ffffff20;
+    gap: clamp(8px, 2.5vh, 16px);
 }
 
 .aylana {
-    width: 140px;
-    height: 140px;
-    background: url('img/pexels-photo-771742.webp') no-repeat center/cover;
+    width: clamp(110px, 18vw, 140px);
+    height: clamp(110px, 18vw, 140px);
+    object-fit: cover;
     border-radius: 50%;
     border: 4px solid #00ddeb;
     box-shadow: 0 5px 20px rgba(0, 221, 235, 0.4);
@@ -156,9 +161,8 @@ body::after {
 }
 
 .aylana.smaller {
-    width: 110px;
-    height: 110px;
-    background: url('img/my-profile-image.jpg') no-repeat center/cover;
+    width: clamp(96px, 16vw, 110px);
+    height: clamp(96px, 16vw, 110px);
     border-radius: 50%;
     border: 4px solid #6b48ff;
     box-shadow: 0 5px 20px rgba(107, 72, 255, 0.4);
@@ -175,11 +179,11 @@ body::after {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: clamp(8px, 2.5vw, 12px);
 }
 
-h4 {
-    font-size: 32px; 
+h1 {
+    font-size: clamp(24px, 4vw, 32px); 
     font-weight: 400; 
     color: #fff;
     letter-spacing: 2px;
@@ -187,7 +191,7 @@ h4 {
 }
 
 p {
-    font-size: 18px; 
+    font-size: clamp(15px, 2.6vw, 18px); 
     color: #d1d1e9;
     font-weight: 400; 
     letter-spacing: 1.2px; 
@@ -198,6 +202,8 @@ p {
     display: flex;
     gap: 12px;
     margin: 20px 0;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .btn a {
@@ -205,7 +211,7 @@ p {
     color: #fff;
     padding: 10px 20px;
     border-radius: 30px;
-    font-size: 15px;
+    font-size: clamp(14px, 2.4vw, 15px);
     font-weight: 400; 
     letter-spacing: 1.5px; 
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
@@ -222,17 +228,88 @@ p {
     display: inline-block;
     background: #ff2e63;
     color: #fff;
-    padding: 12px 30px;
+    padding: 12px 26px;
     border-radius: 30px;
     font-weight: 400; 
     letter-spacing: 1.5px; 
-    font-size: 16px; 
+    font-size: clamp(14px, 2.6vw, 16px); 
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     transition: all 0.4s ease;
+}
+
+@media (min-width: 1200px) {
+    .card {
+        width: min(380px, 80vw);
+        height: clamp(420px, 60vh, 520px);
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        height: clamp(360px, 72vh, 420px);
+    }
+
+    .card-back {
+        padding: 20px;
+    }
+
+    .btn {
+        gap: 10px;
+        margin: 16px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        border-radius: 18px;
+    }
+
+    .card-front,
+    .card-back {
+        border-radius: 18px;
+    }
+
+    .btn a,
+    .button {
+        width: 100%;
+        max-width: 240px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 360px) {
+    .card {
+        width: 100%;
+        height: clamp(320px, 78vh, 400px);
+    }
+
+    .btn a,
+    .button {
+        max-width: 100%;
+    }
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .card {
+        height: clamp(300px, 80vh, 380px);
+    }
+
+    .card-back {
+        padding: 18px;
+    }
 }
 
 .button:hover {
     background: #ff577f;
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(255, 46, 99, 0.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
