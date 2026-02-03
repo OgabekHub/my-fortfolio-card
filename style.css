@@ -13,6 +13,7 @@ body {
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,12 +83,20 @@ body::after {
     width: 100%;
     min-height: 100vh;
     min-height: 100svh;
-    padding: 24px;
+
+    padding: clamp(16px, 4vw, 32px);
 }
 
 .card {
-    width: min(320px, 92vw);
-    height: clamp(380px, 70vh, 450px);
+    width: min(360px, 92vw);
+    height: clamp(360px, 70vh, 480px);
+    max-height: 90svh;
+
+    padding: 24px;
+}
+
+
+
     perspective: 1200px;
     border-radius: 20px;
     overflow: hidden;
@@ -136,6 +145,7 @@ body::after {
     padding: 24px;
     text-align: center;
     border: 3px solid #ffffff20;
+    gap: clamp(8px, 2.5vh, 16px);
 }
 
 .aylana {
@@ -176,7 +186,7 @@ body::after {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: clamp(8px, 2.5vw, 12px);
 }
 
 h1 {
@@ -225,7 +235,7 @@ p {
     display: inline-block;
     background: #ff2e63;
     color: #fff;
-    padding: 12px 30px;
+    padding: 12px 26px;
     border-radius: 30px;
     font-weight: 400; 
     letter-spacing: 1.5px; 
@@ -234,9 +244,19 @@ p {
     transition: all 0.4s ease;
 }
 
+
+@media (min-width: 1200px) {
+    .card {
+        width: min(380px, 80vw);
+        height: clamp(420px, 60vh, 520px);
+    }
+}
+
+
+
 @media (max-width: 768px) {
     .card {
-        height: clamp(360px, 72vh, 420px);
+    
     }
 
     .card-back {
@@ -267,8 +287,38 @@ p {
     }
 }
 
-.button:hover {
-    background: #ff577f;
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(255, 46, 99, 0.5);
+
+@media (max-width: 360px) {
+    .card {
+        width: 100%;
+        height: clamp(320px, 78vh, 400px);
+    }
+
+    .btn a,
+    .button {
+        max-width: 100%;
+    }
 }
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .card {
+        height: clamp(300px, 80vh, 380px);
+    }
+
+    .card-back {
+        padding: 18px;
+    }
+}
+
+
+
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
