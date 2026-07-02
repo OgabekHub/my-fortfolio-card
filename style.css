@@ -120,20 +120,23 @@ body::after {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
 .card-front {
-    background: linear-gradient(45deg, #6b48ff, #00ddeb);
-    border: 3px solid #ffffff20;
+    background: linear-gradient(135deg, rgba(107, 72, 255, 0.2), rgba(0, 221, 235, 0.2));
 }
 
 .card-back {
-    background: linear-gradient(45deg, #1e1e2f, #2a2a72);
     transform: rotateY(180deg);
     flex-direction: column;
     padding: 25px;
     text-align: center;
-    border: 3px solid #ffffff20;
+    background: linear-gradient(135deg, rgba(30, 30, 47, 0.6), rgba(42, 42, 114, 0.6));
 }
 
 .aylana {
@@ -235,4 +238,45 @@ p {
     background: #ff577f;
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(255, 46, 99, 0.5);
+}
+
+/* --- Skills Orbit Animation --- */
+.skills-orbit {
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    animation: orbit 15s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; 
+    z-index: 2;
+}
+
+.skill-icon {
+    position: absolute;
+    font-size: 28px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    animation: counter-orbit 15s linear infinite;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+@keyframes orbit {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes counter-orbit {
+    0% { transform: rotate(calc(90deg * var(--i))) translateY(-115px) rotate(calc(-90deg * var(--i) - 0deg)); }
+    100% { transform: rotate(calc(90deg * var(--i))) translateY(-115px) rotate(calc(-90deg * var(--i) - 360deg)); }
 }
