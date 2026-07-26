@@ -217,18 +217,26 @@ p {
 
 .btn {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     margin: 20px 0;
+    width: 100%;
 }
 
 .btn a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
     background: #6b48ff;
     color: #fff;
-    padding: 10px 20px;
+    padding: 10px 14px;
     border-radius: 30px;
-    font-size: 15px;
-    font-weight: 400; 
-    letter-spacing: 1.5px; 
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.6px;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     transition: all 0.4s ease;
 }
@@ -246,14 +254,18 @@ p {
 }
 
 .button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
     background: #ff2e63;
     color: #fff;
     padding: 12px 30px;
     border-radius: 30px;
-    font-weight: 400; 
-    letter-spacing: 1.5px; 
-    font-size: 16px; 
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    font-size: 16px;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     transition: all 0.4s ease;
 }
